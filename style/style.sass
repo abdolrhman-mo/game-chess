@@ -1,0 +1,97 @@
+$board_width: 300px
+
+body
+    background: rgb(43, 43, 43) url("../images/background.jpg")
+    background-position: center
+    background-size: cover
+    display: grid
+    grid-template-columns: 1fr 1fr
+
+body > div
+    margin: 0 auto
+
+.game-board
+    width: $board_width
+    height: 300px
+    display: grid
+    grid-template-columns: 1fr
+    overflow: hidden
+    user-select: none
+    transition: all 1s ease
+
+.row
+    display: grid
+    grid-template-columns: repeat(8, 1fr)
+
+.square
+    width: 37.5px
+    height: 37.5px
+    background-color: #4c2925
+    user-select: none
+
+    .row._8 > &:nth-child(even),
+
+    .row._6 > &:nth-child(even),
+
+    .row._4 > &:nth-child(even),
+
+    .row._2 > &:nth-child(even),
+
+    .row._7 > &:nth-child(odd),
+
+    .row._5 > &:nth-child(odd),
+
+    .row._3 > &:nth-child(odd),
+
+    .row._1 > &:nth-child(odd)
+        background-color: #f0dec1
+        box-shadow: inset -1px 3px 8px 5px #ffffff, 2px 5px 16px 0px #0b325e,
+    0px 0px 13px 5px rgba(0, 0, 0, 0.16)
+
+.piece
+    width: 37.5px
+    height: 37.5px
+    cursor: pointer
+    user-select: none
+    transition: all 1s ease
+
+.indication
+    width: 10px
+    height: 10px
+    border-radius: 50%
+    background-color: rgb(97, 255, 97)
+    opacity: 0.6
+    position: relative
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    pointer-events: none
+    user-select: none
+
+.score-board
+    background: #1f3958
+    width: 218px
+    height: 88px
+    border-radius: 10px
+    border: 3px solid rgb(77, 155, 192)
+    color: white
+    display: flex
+    align-items: center
+    align-self: center
+    justify-content: center
+    font-family: "Courier New", Courier, monospace
+
+    & img
+        width: 48px
+
+.additional-board
+    width: $board_width
+    height: 80px
+    box-sizing: border-box
+    border: 3.5px solid #4c2925
+    display: grid
+    grid-template-columns: 1fr
+    margin: 5px auto
+    & > div
+        display: grid
+        gird-template-columns: repeat(16, 1fr)

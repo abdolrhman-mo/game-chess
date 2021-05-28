@@ -1,0 +1,134 @@
+body {
+  background: #2b2b2b url("../images/background.jpg");
+  background-position: center;
+  background-size: cover;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+body > div {
+  margin: 0 auto;
+}
+
+.game-board {
+  width: 300px;
+  height: 300px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[8];
+      grid-template-columns: repeat(8, 1fr);
+}
+
+.square {
+  width: 37.5px;
+  height: 37.5px;
+  background-color: #4c2925;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.row._8 > .square:nth-child(even),
+.row._6 > .square:nth-child(even),
+.row._4 > .square:nth-child(even),
+.row._2 > .square:nth-child(even),
+.row._7 > .square:nth-child(odd),
+.row._5 > .square:nth-child(odd),
+.row._3 > .square:nth-child(odd),
+.row._1 > .square:nth-child(odd) {
+  background-color: #f0dec1;
+  -webkit-box-shadow: inset -1px 3px 8px 5px #ffffff, 2px 5px 16px 0px #0b325e;
+          box-shadow: inset -1px 3px 8px 5px #ffffff, 2px 5px 16px 0px #0b325e;
+}
+
+.piece {
+  width: 37.5px;
+  height: 37.5px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.indication {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #61ff61;
+  opacity: 0.6;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.score-board {
+  background: #1f3958;
+  width: 218px;
+  height: 88px;
+  border-radius: 10px;
+  border: 3px solid #4d9bc0;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.score-board img {
+  width: 48px;
+}
+
+.additional-board {
+  width: 300px;
+  height: 80px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 3.5px solid #4c2925;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  margin: 5px auto;
+}
+
+.additional-board > div {
+  display: -ms-grid;
+  display: grid;
+  gird-template-columns: repeat(16, 1fr);
+}
+/*# sourceMappingURL=style.css.map */
